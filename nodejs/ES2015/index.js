@@ -14,6 +14,12 @@ class Pokemon {
 }
 
 class PokemonList extends Array {
+  constructor(...items){
+    items = items.filter(item => item instanceof Pokemon);
+    
+    super(...items);
+  }
+
   add(...args) {
     this.push(new Pokemon(...args));
   }
@@ -25,15 +31,11 @@ class PokemonList extends Array {
   }
 
   max() {
-    const items = Object.create(this);
-
-    items.sort((a, b) => a < b);
-
-    return items[0];
+    return this.find(item => item.level == Math.max(...this));
   }
 }
 
-const lost = new PokemonList();
+const lost = new PokemonList({}, {}, new Pokemon('Bater', 0));
 const found = new PokemonList();
 
 console.log('--Добавление покемонов в список--');
@@ -51,7 +53,7 @@ found.show();
 
 console.log('--Перенос покемона--');
 
-found.push.apply(found, lost.splice(0, 1));
+found.push(...lost.splice(0, 1));
 
 lost.show();
 found.show();
