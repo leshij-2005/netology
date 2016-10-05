@@ -1,0 +1,21 @@
+{
+  "name": "netology",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "es2015": "node ./nodejs/es2015/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leshij-2005/netology.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leshij-2005/netology/issues"
+  },
+  "homepage": "https://github.com/leshij-2005/netology#readme"
+}
