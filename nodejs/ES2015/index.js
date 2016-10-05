@@ -31,7 +31,9 @@ class PokemonList extends Array {
   }
 
   max() {
-    return this.find(item => item.level == Math.max(...this));
+    const maxLevel = Math.max(...this);
+
+    return this.find(item => item.level == maxLevel);
   }
 }
 
