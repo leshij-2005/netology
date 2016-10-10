@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "es2015": "node ./nodejs/es2015/index.js",
+    "files": "node ./nodejs/files/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

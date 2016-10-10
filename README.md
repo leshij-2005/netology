@@ -12,3 +12,14 @@
 ```js
 npm run es2015
 ```
+
+### Задание к занятию «Работа с файлами»
+Скрипты:
+
+    nodejs/files/index.js
+
+Запуск: 
+
+```js
+npm run files
+```
