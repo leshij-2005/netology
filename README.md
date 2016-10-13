@@ -23,3 +23,14 @@ npm run es2015
 ```js
 npm run files
 ```
+
+### Задание к занятию «События EventEmmiter»
+Скрипты:
+
+    nodejs/eventEmitter/index.js
+
+Запуск: 
+
+```js
+npm run eventEmitter
+```

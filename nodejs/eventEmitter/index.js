@@ -21,6 +21,7 @@ vkChat.on('message', chatOnMessage);
 setTimeout( ()=> {
   console.log('Закрываю вконтакте...');
   vkChat.removeListener('message', chatOnMessage);
+  vkChat.close();
 }, 10000 );
 
 
@@ -38,8 +39,6 @@ vkChat.setMaxListeners(2);
 vkChat.on('message', waitAfterOnMessage);
 
 vkChat.on('close', vkChatOnClose);
-
-vkChat.close();
 
 setTimeout(() => {
   webinarChat.removeListener('message', chatOnMessage);

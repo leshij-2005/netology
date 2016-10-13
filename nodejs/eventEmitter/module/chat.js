@@ -16,7 +16,8 @@ class ChatApp extends EventEmitter {
 
   close() {
     this.emit('close');
-    this.removeAllListeners(['message', 'close']);
+    this.removeAllListeners('close');
+    this.removeAllListeners('message');
   }
 }
 
