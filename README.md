@@ -34,3 +34,14 @@ npm run files
 ```js
 npm run eventEmitter
 ```
+
+### Задание к занятию «Потоки Stream»
+Скрипты:
+
+    nodejs/stream/index.js
+
+Запуск: 
+
+```js
+npm run stream
+```
