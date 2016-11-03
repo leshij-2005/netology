@@ -1,7 +1,7 @@
 [
-  "Cuvi", 6
-  "Bulba", 8
-  "Pirot", 2
-  "Pikachu", 10
-  "Phili", 5
+  ["Cuvi", 6],
+  ["Bulba", 8],
+  ["Pirot", 2],
+  ["Pikachu", 10],
+  ["Phili", 5]
 ]

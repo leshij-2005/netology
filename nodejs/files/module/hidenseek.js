@@ -29,23 +29,20 @@ const createDir = dir => {
 }
 
 const createDirs = (path, count) => {
-  
-  return new Promise((resolve, reject) => {
-    const dirs = [];
+  const dirs = [];
 
-    createDir(path)
-      .then(dir => {
-        for(let i = 1; i <= count; i++)
-        {
-          let name = i < 10 ? `0${i}` : i;
-          let dirName = `${dir}${name}/`;
+  return createDir(path)
+    .then(dir => {
+      for(let i = 1; i <= count; i++)
+      {
+        let name = i < 10 ? `0${i}` : i;
+        let dirName = `${dir}${name}/`;
 
-          dirs.push(createDir(dirName));
-        }
+        dirs.push(createDir(dirName));
+      }
 
-        Promise.all(dirs).then(resolve);
-      });
-  });
+      return Promise.all(dirs);
+    });
 };
 
 const readFile = file => {

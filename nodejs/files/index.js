@@ -3,7 +3,7 @@ const { Pokemon, PokemonList } = require('./module/pokemon');
 
 const PATH = './field/';
 
-const [ command, path = PATH, data ] = process.argv.slice(2, 3);
+const [ command, path = PATH, data ] = process.argv.slice(2, 5);
 
 const help = () => {
   console.log('Используйте команды:');
