@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/leshij-2005/netology/issues"
   },
-  "homepage": "https://github.com/leshij-2005/netology#readme"
+  "homepage": "https://github.com/leshij-2005/netology#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "querystring": "^0.2.0"
+  }
 }
