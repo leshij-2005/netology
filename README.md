@@ -52,8 +52,10 @@ npm run stream
     nodejs/httpServer/index.js
     nodejs/httpServer/server.js
 
-Запуск: 
+### Задание к занятию «Создаем простое API, используя express»
+Скрипты:
 
-```js
-npm run httpServer
-```
+    nodejs/expressApi/server/rest.js
+    nodejs/expressApi/server/rpc.js
+    nodejs/expressApi/rest.js
+    nodejs/expressApi/rpc.js
