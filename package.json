@@ -7,7 +7,8 @@
     "es2015": "node ./nodejs/es2015/index.js",
     "files": "node ./nodejs/files/index.js",
     "eventEmitter": "node ./nodejs/eventEmitter/index.js",
-    "stream": "node ./nodejs/stream/index.js"
+    "stream": "node ./nodejs/stream/index.js",
+    "httpServer": "node ./nodejs/httpServer/index.js"
   },
   "repository": {
     "type": "git",

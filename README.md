@@ -45,3 +45,15 @@ npm run eventEmitter
 ```js
 npm run stream
 ```
+
+### Задание к занятию «Создаем и запускаем веб-сервер, используя Express и Socket.io»
+Скрипты:
+
+    nodejs/httpServer/index.js
+    nodejs/httpServer/server.js
+
+Запуск: 
+
+```js
+npm run httpServer
+```
