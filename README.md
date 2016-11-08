@@ -59,3 +59,9 @@ npm run stream
     nodejs/expressApi/server/rpc.js
     nodejs/expressApi/rest.js
     nodejs/expressApi/rpc.js
+
+### Задание к занятию «Роутинг в express»
+Скрипты:
+
+    nodejs/expressRoutes/server.js
+    nodejs/expressRoutes/index.js
