@@ -65,3 +65,9 @@ npm run stream
 
     nodejs/expressRoutes/server.js
     nodejs/expressRoutes/index.js
+
+### Задание к занятию «Взаимодействие в реальном времени с Socket.io»
+Скрипты:
+
+    nodejs/socket.io/server.js
+    nodejs/socket.io/index.js

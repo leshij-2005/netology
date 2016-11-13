@@ -1,0 +1,185 @@
+html,
+body
+{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-size: 16px;
+  font-family: Arial;
+}
+
+.wrapper
+{
+  height: 100%;
+  position: relative;
+
+  background: #aaa;
+}
+
+.enter
+{
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(3, 3, 3, .9);
+}
+
+.enter__wrap
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+
+
+  background: #fff;
+  padding: 20px;
+}
+
+.enter__wrap input
+{
+  width: 240px;
+  height: 40px;
+  font-size: 18px;
+  padding: 0 10px;
+
+  border: 1px solid #666
+
+  outline: none;
+}
+
+.limiter
+{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+
+  box-sizing: border-box;
+  background: #fff;
+
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.users
+{
+  -ms-flex-preferred-size: 20%;
+  flex-basis: 20%;
+  -ms-flex-basis: 20%;
+  -webkit-flex-basis: 20%;
+
+  height: 100%;
+
+  border-right: 1px solid #666;
+}
+
+.users__item
+{
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.users__item:not(:last-child)
+{
+  border-bottom: 1px solid #666;
+}
+
+.chat
+{
+  -ms-flex-preferred-size: 80%;
+  flex-basis: 80%;
+  -ms-flex-basis: 80%;
+  -webkit-flex-basis: 80%;
+
+  height: 100%;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.users,
+.chat
+{
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+
+  flex-grow: 0;
+  -ms-flex-grow: 0;
+  -webkit-flex-grow: 0;
+
+  -ms-flex-negative: 0;
+
+  flex-shrink: 0;
+  -ms-flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.chat-history
+{
+  max-height: 100%;
+  overflow: auto;
+}
+
+.chat__input
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.chat__input textarea
+{
+  width: 100%;
+  height: 40px;
+  padding: 5px 10px;
+
+  border: 0;
+  border-top: 1px solid #666;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+
+  font-size: 16px;
+  font-family: Arial;
+
+  resize: vertical;
+  outline: none;
+}
+
+.chat-history__item
+{
+  padding: 10px;
+}
+
+.chat-history__item:not(:last-child)
+{
+  border-bottom: 1px solid #666;
+}
+
+.chat-history__item-user
+{
+  float: left;
+  width: 20%;
+  margin-right: 20px;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.chat-history__item-text
+{
+  overflow: hidden;
+}
