@@ -1,58 +1,82 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const PORT = process.env.PORT || 3000;
+const http = require('http');
+const querystring = require('querystring');
 
-const app = express();
+const PORT = process.env.PORT || 3000;
 
 const store = {};
 let idx = 0;
 
-app.use(bodyParser.json({limit: '5mb'}));
-app.use(bodyParser.urlencoded({limit: '5mb', extended: true}));
+const routes = {
+  post: {
+    '/regist': (params, response) => {
+      let count = parseInt(params.count);
 
-app.listen(PORT).on('listening', () => {
-  console.log(`Start HTTP on port ${PORT}`);
-});
+      idx += 1;
 
-app.post('/regist', ({ body: params }, response) => {
-  let count = parseInt(params.count);
+      store[idx] = {
+        id: idx,
+        count: count,
+        name: params.name
+      }
 
-  idx += 1;
+      response.write(JSON.stringify(store[idx]));
+    },
+    '/add': (params, response) => {
+      let count = parseInt(params.count);
 
-  store[idx] = {
-    id: idx,
-    count: count,
-    name: params.name
+      const item = store[params.id];
+
+      item.count += count;
+
+      response.write(JSON.stringify(item));
+    },
+    '/remove': (params, response) => {
+      let count = parseInt(params.count);
+
+      const item = store[params.id];
+
+      item.count -= count;
+
+      if(item.count <= 0)
+        delete store[params.id];
+
+      response.write(JSON.stringify(item));
+    }
+  },
+  get: {
+    '/list': (params, response) => {
+      const list = Object.keys(store).map(key => store[key]);
+
+      response.write(JSON.stringify(list));
+    }
   }
+}
 
-  response.json(store[idx]);
+const server = http.createServer((request, response) => {
+  const { method, url } = request;
+  let body = [];
+
+  request.on('data', function(chunk) {
+    body.push(chunk);
+  }).on('end', function() {
+    body = querystring.parse(Buffer.concat(body).toString());
+
+    const func = routes[method.toLowerCase()][url];
+
+    if (func)
+    {
+      response.statusCode = 200;
+      response.setHeader('Content-Type', 'application/json');
+
+      func(body, response);
+
+      response.end();
+    }
+    else
+      response.writeHead(404, 'Not Found');
+  });
 });
 
-app.post('/add', ({ body: params }, response) => {
-  let count = parseInt(params.count);
-
-  const item = store[params.id];
-
-  item.count += count;
-
-  response.json(item);
-});
-
-app.post('/remove', ({ body: params }, response) => {
-  let count = parseInt(params.count);
-
-  const item = store[params.id];
-
-  item.count -= count;
-
-  if(item.count <= 0)
-    delete store[params.id];
-
-  response.json(item);
-});
-
-app.get('/list', ({ body: params }, response) => {
-  const list = Object.keys(store).map(key => store[key]);
-
-  response.json(list);
+server.listen(PORT).on('listening', () => {
+  console.log(`Start HTTP on port ${PORT}`);
 });
