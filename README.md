@@ -70,9 +70,13 @@ npm run stream
 Скрипты:
 
     nodejs/socket.io/server.js
-    nodejs/socket.io/index.js
 
 ### Задание к занятию «Основы MongoDB»
 Скрипты:
 
     nodejs/mongodb/index.js
+
+### Задание к занятию «Все, что нужно знать про запросы в MongoDB»
+Скрипты:
+
+    nodejs/mongodb/server.js
