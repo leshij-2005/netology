@@ -80,3 +80,8 @@ npm run stream
 Скрипты:
 
     nodejs/mongodb/server.js
+
+### Задание к занятию «Библиотека mongoose»
+Скрипты:
+
+    nodejs/mongoose/server.js

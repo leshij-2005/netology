@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Задачи</title>
+
+    <link rel="stylesheet" href="./src/css/app.css" type="text/css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="limiter">
+        <div class="menu">
+          <a href="./users.html">Пользователи</a>
+          <a href="./stats.html">Статистика</a>
+        </div>
+        <div class="form">
+          <form action="http://localhost:3000/tasks/search" id="search">
+            <div class="form__control">
+              <div class="form__control-label">Поиск</div>
+              <div class="form__control-value">
+                <input type="text" name="title" class="field" data-validate="required"/>
+              </div>
+            </div>
+            <div class="form__control">
+              <div class="form__control-label"></div>
+              <div class="form__control-value">
+                <input type="submit" class="button" value="Найти"/>
+                <input type="reset" class="button button_red" id="reset" value="Сбросить"/>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="form">
+          <h3 class="form__title">Добавить задачу</h3>
+          <form action="http://localhost:3000/tasks/" id="create">
+            <div class="form__control">
+              <div class="form__control-label">Заголовок</div>
+              <div class="form__control-value">
+                <input type="text" name="title" class="field" data-validate="required"/>
+              </div>
+            </div>
+            <div class="form__control">
+              <div class="form__control-label">Описание</div>
+              <div class="form__control-value">
+                <input type="text" name="description" class="field"/>
+              </div>
+            </div>
+            <div class="form__control">
+              <div class="form__control-label">Пользователь</div>
+              <div class="form__control-value">
+                <select name="user_id" class="field field_user" data-validate="required">
+                  <option>Не задан</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__control">
+              <div class="form__control-label"></div>
+              <div class="form__control-value">
+                <input type="submit" class="button" value="Добавить"/>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="items"></div>
+
+        <div class="form" style="display: none;">
+          <h3 class="form__title">Обновить задачу</h3>
+          <form action="http://localhost:3000/tasks/" id="edit" method="put">
+            <input type="hidden" name="id"/>
+            <div class="form__control">
+              <div class="form__control-label">Заголовок</div>
+              <div class="form__control-value">
+                <input type="text" name="title" class="field" data-validate="required"/>
+              </div>
+            </div>
+            <div class="form__control">
+              <div class="form__control-label">Описание</div>
+              <div class="form__control-value">
+                <input type="text" name="description" class="field"/>
+              </div>
+            </div>
+            <div class="form__control">
+              <div class="form__control-label">Пользователь</div>
+              <div class="form__control-value">
+                <select name="user_id" class="field field_user" data-validate="required">
+                  <option>Не задан</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__control">
+              <div class="form__control-label"></div>
+              <div class="form__control-value">
+                <input type="submit" class="button" value="Редактировать"/>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./src/js/jquery.js"></script>
+    <script type="text/javascript" src="./src/js/jquery.submitForm.js"></script>
+    <script type="text/javascript" src="./src/js/common.js"></script>
+    <script type="text/javascript" src="./src/js/tasks.js"></script>
+  </body>
+</html>
