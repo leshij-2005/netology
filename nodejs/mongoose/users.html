@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Пользователи</title>
+
+    <link rel="stylesheet" href="./src/css/app.css" type="text/css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="limiter">
+        <div class="menu">
+          <a href="./index.html">Задача</a>
+          <a href="./stats.html">Статистика</a>
+        </div>
+        <div class="form">
+          <form action="http://localhost:3000/users/search" id="search">
+            <div class="form__control">
+              <div class="form__control-label">Поиск по имени</div>
+              <div class="form__control-value">
+                <input type="text" name="name" class="field" data-validate="required"/>
+              </div>
+            </div>
+            <div class="form__control">
+              <div class="form__control-label"></div>
+              <div class="form__control-value">
+                <input type="submit" class="button" value="Найти"/>
+                <input type="reset" class="button button_red" id="reset" value="Сбросить"/>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="form">
+          <h3 class="form__title">Добавить пользователя</h3>
+          <form action="http://localhost:3000/users" id="create">
+            <div class="form__control">
+              <div class="form__control-label">Имя</div>
+              <div class="form__control-value">
+                <input type="text" name="name" class="field" data-validate="required"/>
+              </div>
+            </div>
+            <div class="form__control">
+              <div class="form__control-label">E-mail</div>
+              <div class="form__control-value">
+                <input type="text" name="email" class="field" data-validate="required, email"/>
+              </div>
+            </div>
+            <div class="form__control">
+              <div class="form__control-label"></div>
+              <div class="form__control-value">
+                <input type="submit" class="button" value="Добавить"/>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="items"></div>
+
+        <div class="form" style="display: none;">
+          <h3 class="form__title">Изменить пользователя</h3>
+
+          <form action="http://localhost:3000/users" id="edit" method="put">
+            <input type="hidden" name="id"/>
+            <div class="form__control">
+              <div class="form__control-label">Имя</div>
+              <div class="form__control-value">
+                <input type="text" name="name" class="field" data-validate="required"/>
+              </div>
+            </div>
+            <div class="form__control">
+              <div class="form__control-label">E-mail</div>
+              <div class="form__control-value">
+                <input type="text" name="email" class="field" data-validate="required, email"/>
+              </div>
+            </div>
+            <div class="form__control">
+              <div class="form__control-label"></div>
+              <div class="form__control-value">
+                <input type="submit" class="button" value="Редактировать"/>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./src/js/jquery.js"></script>
+    <script type="text/javascript" src="./src/js/jquery.submitForm.js"></script>
+    <script type="text/javascript" src="./src/js/common.js"></script>
+    <script type="text/javascript" src="./src/js/users.js"></script>
+  </body>
+</html>

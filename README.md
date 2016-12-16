@@ -81,6 +81,10 @@ npm run stream
 
     nodejs/mongodb/server.js
 
+### Задание к занятию «Библиотека mongoose»
+Скрипты:
+
+    nodejs/mongoose/server.js
 ### Задание к занятию «Знакомство с терминами SPA, MVC и введение в Angular»
 Скрипты:
 
