@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Шаг 1 / Фреймворк AngularJS / Нетология</title>
+</head>
+
+<body>
+
+<h1>
+    Старый добрый jQuery
+</h1>
+
+<input id="myCheckbox" type="checkbox">
+
+<h1 id="myText">
+    Hello, world!
+</h1>
+
+<p>
+    <a href="../step2/step2.html">step 2</a>
+</p>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {
+
+        function toggleMyText() {
+
+            if ($('#myCheckbox').is(':checked')) {
+                $('#myText').show();
+            } else {
+                $('#myText').hide();
+            }
+        }
+
+        $('#myCheckbox').change(function () {
+            toggleMyText();
+        });
+
+        toggleMyText();
+    });
+</script>
+
+</body>
+
+</html>

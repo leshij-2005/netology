@@ -80,3 +80,8 @@ npm run stream
 Скрипты:
 
     nodejs/mongodb/server.js
+
+### Задание к занятию «Знакомство с терминами SPA, MVC и введение в Angular»
+Скрипты:
+
+    nodejs/angular/app/
