@@ -1,0 +1,16 @@
+<form name="edit" novalidate data-ng-submit="save(edit)" data-layout="row">
+    <label>
+        <input class="full-width" name="input" type="text" title="" autocomplete="off"
+               data-ng-model="editValue"
+               data-ng-class="{ error: edit.$dirty && hasError(edit.input.$error)}"/>
+    </label>
+
+    <div>
+        <button class="btn-call-to-action btn-small" type="submit">
+            Save
+        </button>
+        <button class="btn-cancel btn-small" type="button" data-ng-click="cancel()">
+            Cancel
+        </button>
+    </div>
+</form>

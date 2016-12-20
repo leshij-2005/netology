@@ -1,0 +1,25 @@
+{
+  "abilities": [
+    "Overgrow"
+  ],
+  "detailPageURL": "/us/pokedex/bulbasaur",
+  "weight": 15.2,
+  "weakness": [
+    "Fire",
+    "Flying",
+    "Ice",
+    "Psychic"
+  ],
+  "height": 28,
+  "collectibles_slug": "bulbasaur",
+  "featured": "true",
+  "id": "001",
+  "name": "Bulbasaur",
+  "ThumbnailAltText": "Bulbasaur",
+  "ThumbnailImage": "http://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
+  "slug": "bulbasaur",
+  "type": [
+    "grass",
+    "poison"
+  ]
+}

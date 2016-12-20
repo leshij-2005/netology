@@ -1,0 +1,46 @@
+<style>
+    .ng-dirty.ng-invalid {
+        border-color: #FA787E;
+    }
+
+    .ng-dirty.ng-valid {
+        border-color: #78FA89;
+    }
+
+</style>
+
+<form name="vm.pokemonForm" novalidate>
+    <div class="form-group">
+        <label>Имя</label>
+        <input class="form-control" data-ng-model="vm.newPokemon.name" type="text" placeholder="Имя" required ng-minlength="3" name="pokemonName">
+    </div>
+
+    <div ng-messages="vm.pokemonForm.pokemonName.$error" ng-if="vm.pokemonForm.pokemonName.$dirty">
+
+        <div ng-message="required" class="alert alert-danger" role="alert">А где имя?</div>
+        <div ng-message="minlength" class="alert alert-danger" role="alert">Имя слишком короткое</div>
+
+    </div>
+
+    <div class="form-group">
+        <label>Вес</label>
+        <input class="form-control" data-ng-model="vm.newPokemon.weight" type="text" placeholder="Вес" data-ng-pattern="/^(\d)+$/" name="pokemonWeight">
+    </div>
+
+    <div role="alert" ng-messages="vm.pokemonForm.pokemonWeight.$error" ng-if="vm.pokemonForm.pokemonWeight.$dirty">
+        <div ng-message="pattern" class="alert alert-danger">Это значение не похоже на вес</div>
+    </div>
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox">
+            Активен
+        </label>
+    </div>
+    <button type="submit" class="btn btn-default" data-ng-click="vm.addPokemon(vm.newPokemon)" data-ng-disabled="vm.pokemonForm.$invalid">Добавить
+    </button>
+
+    <pre>pokemonForm.pokemonName.$error = {{ vm.pokemonForm.pokemonName.$error | json }}</pre>
+    <pre>pokemonForm.pokemonWeight.$error = {{ vm.pokemonForm.pokemonWeight.$error | json }}</pre>
+
+</form>

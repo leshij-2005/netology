@@ -1,0 +1,14 @@
+Shopping cart
+
+<div class="list-group">
+    <div class="list-group-item" ng-repeat="(singlePokemonIndex, singlePokemonValue) in $ctrl.cartItems">
+        <h4 class="list-group-item-heading">
+            <span class="badge">{{singlePokemonIndex}}</span>
+            <a ng-href="#/pokemons/{{singlePokemonIndex}}">{{singlePokemonValue.name | uppercase }}</a>
+            X
+            {{singlePokemonValue.quantity}}
+        </h4>
+        <button ng-click="$ctrl.removeFromCart(singlePokemonIndex)">Remove</button>
+
+    </div>
+</div>

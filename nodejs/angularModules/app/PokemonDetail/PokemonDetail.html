@@ -1,0 +1,20 @@
+<div class="media">
+    <div class="media-left">
+        <img class="media-object" ng-src="{{vm.pokemon.ThumbnailImage}}" alt="{{vm.pokemon.name }}">
+    </div>
+    <div class="media-body">
+        <span class="badge">{{vm.pokemon.id }}</span>
+        <input type="checkbox" data-ng-model="vm.rename" />
+        <span>{{vm.pokemon.name}}</span>
+        <h4 class="media-heading" data-nd-inline-edit data-nd-model="vm.pokemon.name" data-nd-trigger="vm.rename" data-mb-tab-index="15" data-nd-save-fn="vm.renameItem" data-nd-cancel="vm.toggleRename">
+            <span>{{vm.pokemon.name}}</span>
+        </h4>
+        <a class="btn btn-default" data-ui-sref="detail.edit">Edit</a>
+        <div ui-view="">
+            <pokemon-detail pokemon="vm.pokemon"></pokemon-detail>
+        </div>
+    </div>
+
+    Date format: <input ng-model="vm.format">
+    <hr/> Current time is: <span my-current-time="vm.format"></span>
+</div>
