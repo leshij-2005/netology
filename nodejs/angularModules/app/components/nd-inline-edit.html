@@ -1,9 +1,13 @@
 <form name="edit" novalidate data-ng-submit="save(edit)" data-layout="row">
     <label>
         <input class="full-width" name="input" type="text" title="" autocomplete="off"
-               data-ng-model="editValue"
+               data-ng-model="editValue" required 
                data-ng-class="{ error: edit.$dirty && hasError(edit.input.$error)}"/>
     </label>
+
+    <div ng-messages="edit.input.$error">
+        <div ng-message="required" class="alert alert-danger" role="alert">Укажите имя</div>
+    </div>
 
     <div>
         <button class="btn-call-to-action btn-small" type="submit">

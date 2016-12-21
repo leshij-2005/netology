@@ -125,6 +125,8 @@ angular
 
                         originalContent = getInnerElement().replaceWith($compile(template)(childScope));
                         initialized = true;
+
+                        childScope.edit.$setPristine();
                     });
                 }
 

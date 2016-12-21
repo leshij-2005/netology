@@ -1,7 +1,16 @@
-<form name="edit" novalidate data-layout="row">
-    <p>Вес: <input type="number" maxlength="20" ng-model="pokemon.weight">, рост: <input type="number" maxlength="20" ng-model="pokemon.height"></p>
+<form name="pokemonEdit" novalidate data-layout="row">
+    <p>Вес: <input type="number" maxlength="20" data-ng-model="pokemonEdit.weight" required>, рост: <input type="number" maxlength="20" data-ng-model="pokemonEdit.height" required></p>
+    
+    <div ng-messages="pokemonEdit.weight.$error">
+      <div ng-message="required" class="alert alert-danger" role="alert">Укажите вес</div>
+    </div>
+
+    <div ng-messages="pokemonEdit.height.$error">
+      <div ng-message="required" class="alert alert-danger" role="alert">Укажите рост</div>
+    </div>
+
     <div>
-        <button class="btn-call-to-action" ui-sref="detail" data-ng-click="save()">
+        <button class="btn-call-to-action" ui-sref="detail" data-ng-click="save()" data-ng-disabled="pokemonEdit.$invalid">
             Save
         </button>
         <button class="btn-cancel" ui-sref="detail" data-ng-click="cancel()">

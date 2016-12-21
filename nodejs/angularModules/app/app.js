@@ -30,6 +30,6 @@ config(function($stateProvider) {
             url: '/edit',
             parent: 'detail',
             templateUrl: 'PokemonDetail/PokemonDetailEdit.html',
-            controller: function() {}
+            controller: 'PokemonDetailCtrl as vm'
         });
 });
