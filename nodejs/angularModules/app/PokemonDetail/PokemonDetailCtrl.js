@@ -13,6 +13,18 @@ angular
                 vm.pokemon = pokemonData.data;
             });
 
+        vm.renameItem = function(value){
+            return new Promise(function(resolve, reject){
+                vm.pokemon.name = value;
+
+                resolve(vm.pokemon.name);
+            });
+        };
+
+        vm.toggleRename = function() {
+            vm.rename = false;
+        }
+
     }).component('pokemonDetail', {
         //components match only elements
         template: '<p>Вес: {{$ctrl.pokemon.weight}}, рост: {{$ctrl.pokemon.height}}</p>',
@@ -102,9 +114,7 @@ angular
                     }
 
                     if (form.$valid) {
-                        debugger;
-
-                        scope.ndSaveFn(childScope.editValue).finally(function() {
+                        scope.ndSaveFn(childScope.editValue).then(function() {
                             cancel();
                         });
                     }
