@@ -85,7 +85,18 @@ npm run stream
 Скрипты:
 
     nodejs/mongoose/server.js
+
 ### Задание к занятию «Знакомство с терминами SPA, MVC и введение в Angular»
 Скрипты:
 
     nodejs/angular/app/
+
+### Задание к занятию «Модульность приложения, сервисы, dependency injection»
+Скрипты:
+
+    nodejs/angularModules/app/
+
+### Задание к занятию «XHR-запросы в Angular - основа работы с back-end приложения»
+Скрипты:
+
+    nodejs/angularXhr/app/
