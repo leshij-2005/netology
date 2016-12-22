@@ -1,0 +1,39 @@
+<div ng-if="!pokemonLoaded">
+    <span class="glyphicon glyphicon-refresh"></span>
+    Loading...
+</div>
+
+<div class="media" ng-if="pokemonLoaded">
+    <div class="media-left">
+        <img class="media-object" ng-src="{{pokemon.sprites.front_default}}" alt="{{pokemon.name }}">
+        <img class="media-object" ng-src="{{pokemon.sprites.back_default}}" alt="{{pokemon.name }}">
+    </div>
+    <div class="media-body">
+
+        <span class="badge">{{ pokemon.id }}</span>
+        <h1 class="media-heading">{{pokemon.name | uppercase }}</h1>
+        <p>Вес:
+            {{pokemon.weight}}, рост:
+            {{pokemon.height}}</p>
+
+        <div class="list-group">
+            <a class="list-group-item" ng-repeat="singleAbility in pokemon.abilities">
+                <h4 class="list-group-item-heading">
+                    <span class="badge">{{singleAbility.slot }}</span>
+                    {{singleAbility.ability.name }}
+                </h4>
+            </a>
+        </div>
+
+        <input class="form-control" ng-model="pokemon.name" type="text" placeholder="Имя" required>
+
+        <button class="btn btn-danger" ng-click="deletePokemon(pokemon.name)">
+            <span class="glyphicon glyphicon-trash"></span>
+            Удалить
+        </button>
+
+    </div>
+</div>
+
+<div class="alert alert-success" role="alert" ng-if="deletionSuccess">Пока, покемон!</div>
+<div class="alert alert-danger" role="alert" ng-if="deletionError">Покемоны не сдаются!</div>

@@ -1,0 +1,22 @@
+.list
+{
+  min-height: 100px;
+}
+
+.processing
+{
+  position: relative;
+}
+
+.processing:after
+{
+  content: ' ';
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255, 0.7) url(./img/loading.gif) no-repeat center center;
+  background-size: 64px;
+}
