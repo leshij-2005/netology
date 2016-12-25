@@ -1,0 +1,28 @@
+<div ng-if="!pokemonLoaded">
+    <span class="glyphicon glyphicon-refresh"></span>
+    Loading...
+</div>
+
+<div class="alert alert-danger" role="alert" ng-if="notfoundError">Покемон не найден</div>
+
+<div class="media" ng-if="pokemonLoaded">
+    <div class="media-body">
+
+        <h1 class="media-heading">{{pokemon.name | uppercase }}</h1>
+        <p>Вес:
+            {{pokemon.weight}}, рост:
+            {{pokemon.height}}</p>
+
+        <button class="btn btn-danger" ng-click="deletePokemon(pokemon.objectId)">
+            <span class="glyphicon glyphicon-trash"></span>
+            Удалить
+        </button>
+        <a class="btn btn-primary" href="#!/edit/{{pokemon.objectId}}">
+            Редактировать
+        </a>
+
+    </div>
+</div>
+
+<div class="alert alert-success" role="alert" ng-if="deletionSuccess">Пока, покемон!</div>
+<div class="alert alert-danger" role="alert" ng-if="deletionError">Покемоны не сдаются!</div>
