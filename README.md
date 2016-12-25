@@ -100,3 +100,8 @@ npm run stream
 Скрипты:
 
     nodejs/angularXhr/app/
+
+### Задание к занятию Взаимодействие с классически построенным RESTful API - это просто!
+Скрипты:
+
+    nodejs/angularREST/app
