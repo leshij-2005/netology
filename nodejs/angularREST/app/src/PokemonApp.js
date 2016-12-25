@@ -7,6 +7,10 @@ module('PokemonApp')
     function config($routeProvider) {
 
         $routeProvider.
+        when('/berries', {
+            templateUrl: 'src/BerryList/BerryList.html',
+            controller: 'BerryListCtrl'
+        }).        
         when('/pokemons', {
             templateUrl: 'src/PokemonList/PokemonList.html',
             controller: 'PokemonListCtrl'
@@ -31,8 +35,8 @@ module('PokemonApp')
 
 .config(['$httpProvider', function($httpProvider) {
     $httpProvider.defaults.headers.common = {
-        "application-id": "4B730C92-F81E-236B-FFF0-6651FE882800",
-        "secret-key": "CB6DE86C-6069-86C4-FF1C-9049D5AC9400"
+        'application-id': 'C01F972D-7700-493A-FF45-9452A01F4100',
+        'secret-key': 'EE9BB6C8-EDA9-1410-FF8E-6EBAC140FD00'
     };
 
 }]);
