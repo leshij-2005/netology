@@ -1,10 +1,11 @@
 "use strict";
 
 function statement(customer, movies) {
-	let totalAmount = 0;
 	let result = `Rental Record for ${customer.name}\n`;
 
 	let totalFrequentRenterPoints = getFrequentRenterPoints(customer);
+
+	let totalAmount = getTotalAmount(customer);
 
 	for (let rental of customer.rentals) {
 		let movie = movieFor(rental);
@@ -12,7 +13,6 @@ function statement(customer, movies) {
 
 		//print figures for this rental
 		result += `\t${movie.title}\t${thisAmount}\n`;
-		totalAmount += thisAmount;
 	}
 
 	// add footer lines
@@ -58,6 +58,16 @@ function statement(customer, movies) {
 		}
 
 		return total;
+	}
+
+	function getTotalAmount(customer) {
+		let totalAmount = 0;
+
+		for (let rental of customer.rentals) {
+			totalAmount += getAmount(rental);
+		}
+
+		return totalAmount;
 	}
 }
 
