@@ -1,41 +1,39 @@
 <?php
-  function loadFile($file) {
-    function makeFileName($file) {
-      $fn = explode(".", $file['name']);
+  function makeFileName($file) {
+    $fn = explode(".", $file['name']);
 
-      return $fn[0].time().".".$fn[1];
-    }
+    return $fn[0].time().".".$fn[1];
+  }
 
+  function loadFile($file, $path) {
     if ($file['name'])
     {
-      $fileName = makeFileName($file);
-
-      if(is_uploaded_file($file['tmp_name']))
+      if (is_uploaded_file($file['tmp_name']))
       {
-        $filePath = $_SERVER['DOCUMENT_ROOT']."/assets/resources/$fileName";
+        if (move_uploaded_file($file['tmp_name'], $path)) {
 
-        if (move_uploaded_file($file['tmp_name'], $filePath)) {
-          
-          list($width_orig, $height_orig) = getimagesize($filePath);
+          list($width_orig, $height_orig) = getimagesize($path);
 
           $ratio_orig = $width_orig/$height_orig;
 
           if ($width/$height > $ratio_orig) {
-             $width = $height*$ratio_orig;
+            $width = $height*$ratio_orig;
           } else {
-             $height = $width/$ratio_orig;
+            $height = $width/$ratio_orig;
           }
 
           $image_p = imagecreatetruecolor($width, $height);
-          $image = imagecreatefromjpeg($filePath);
+          $image = imagecreatefromjpeg($path);
           imagecopyresampled($image_p, $image, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
 
-          imagejpeg($image_p, $filePath, 100);
+          imagejpeg($image_p, $path, 100);
 
-          return "/assets/resources/$fileName";
+          return true;
         }
       }
     }
+
+    return false;
   }
 
   if (count($_FILES) > 0)
@@ -45,6 +43,11 @@
 
     foreach($_FILES as $key => $file)
     {
-      $params['logo'] = loadFile($file)
+      $fileName = makeFileName($file);
+      $filePath = $_SERVER['DOCUMENT_ROOT']."/assets/resources/$fileName";
+
+      if (loadFile($file)) {
+        $params[$key] = "/assets/resources/$fileName";
+      }
     }
   }
