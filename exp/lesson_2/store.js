@@ -7,26 +7,8 @@ function statement(customer, movies) {
 
 	for (let rental of customer.rentals) {
 		let movie = movieFor(rental);
-		let thisAmount = 0;
 
-		// determine amount for each movie
-		switch (movie.code) {
-			case "regular":
-				thisAmount = 2;
-				if (rental.days > 2) {
-					thisAmount += (rental.days - 2) * 1.5;
-				}
-				break;
-			case "new":
-				thisAmount = rental.days * 3;
-				break;
-			case "childrens":
-				thisAmount = 1.5;
-				if (rental.days > 3) {
-					thisAmount += (rental.days - 3) * 1.5;
-				}
-				break;
-		}
+		let thisAmount = getAmount(movie, rental);
 
 		//add frequent renter points
 		totalFrequentRenterPoints++;
@@ -49,6 +31,31 @@ function statement(customer, movies) {
 
 	function movieFor(rental) {
 		return movies[rental.movieID];
+	}
+
+	function getAmount(movie, rental) {
+		let thisAmount = 0;
+
+		// determine amount for each movie
+		switch (movie.code) {
+			case "regular":
+				thisAmount = 2;
+				if (rental.days > 2) {
+					thisAmount += (rental.days - 2) * 1.5;
+				}
+				break;
+			case "new":
+				thisAmount = rental.days * 3;
+				break;
+			case "childrens":
+				thisAmount = 1.5;
+				if (rental.days > 3) {
+					thisAmount += (rental.days - 3) * 1.5;
+				}
+				break;
+		}
+
+		return thisAmount;
 	}
 }
 
