@@ -10,7 +10,21 @@ class Customer {
   }
   
   get rentals() {
-    return this._data.rentals;
+    return this._data.rentals.map(rental => new Rental(rental));
+  }
+}
+
+class Rental {
+  constructor(data) {
+    this._data = data;
+  }
+  
+  get movieID() {
+    return this._data.movieID;
+  }
+  
+  get days() {
+    return this._data.days;
   }
 }
 
