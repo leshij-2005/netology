@@ -5,7 +5,6 @@ const Customer = require('./customer.js');
 function txtStatement(customerArg, movies) {
   const customer = new Customer(customerArg, movies);
   
-  
   function buildHeader() {
     return `Rental Record for ${customer.name}\n`;
   }
