@@ -24,10 +24,9 @@
       <file leaf-file-name="store.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/exp/lesson_4/store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="70">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
-                <element signature="n#!!block;n#getAmount#0" expanded="false" />
                 <element signature="n#!!block;n#getTotalFrequentRenterPoints#0" expanded="false" />
                 <element signature="n#!!block;n#getTotalAmount#0" expanded="false" />
               </folding>
@@ -48,8 +47,8 @@
       <file leaf-file-name="rental.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/exp/lesson_4/rental.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+            <state relative-caret-position="220">
+              <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -108,6 +107,28 @@
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1096" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>JSUnresolvedVariable</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -309,7 +330,7 @@
       <updated>1484138566296</updated>
       <workItem from="1484138567578" duration="3708000" />
       <workItem from="1488776782353" duration="86000" />
-      <workItem from="1488776986623" duration="2353000" />
+      <workItem from="1488776986623" duration="2481000" />
     </task>
     <task id="LOCAL-00001" summary="start work by eXP;">
       <created>1484141667223</created>
@@ -322,7 +343,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6147000" />
+    <option name="totallyTimeSpent" value="6275000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1096" extended-state="0" />
@@ -376,14 +397,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/exp/lesson-2/store.js" />
-    <entry file="file://$PROJECT_DIR$/exp/lesson_4/rental.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/exp/lesson_4/customer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -392,12 +405,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/exp/lesson_4/rental.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/exp/lesson_4/store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="70">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#getAmount#0" expanded="false" />
             <element signature="n#!!block;n#getTotalFrequentRenterPoints#0" expanded="false" />
             <element signature="n#!!block;n#getTotalAmount#0" expanded="false" />
           </folding>
