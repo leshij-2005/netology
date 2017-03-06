@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9c43492-a023-406a-8362-102bcb5fae51" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exp/lesson_4/customer.js" afterPath="$PROJECT_DIR$/exp/lesson_4/customer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exp/lesson_4/store.js" afterPath="$PROJECT_DIR$/exp/lesson_4/store.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,8 +23,8 @@
       <file leaf-file-name="store.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/exp/lesson_4/store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+            <state relative-caret-position="252">
+              <caret line="45" column="2" lean-forward="false" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -70,8 +69,8 @@
         <option value="$PROJECT_DIR$/nodejs/expressApi/rest.js" />
         <option value="$PROJECT_DIR$/exp/lesson-2/store.js" />
         <option value="$PROJECT_DIR$/exp/lesson_4/rental.js" />
-        <option value="$PROJECT_DIR$/exp/lesson_4/store.js" />
         <option value="$PROJECT_DIR$/exp/lesson_4/customer.js" />
+        <option value="$PROJECT_DIR$/exp/lesson_4/store.js" />
       </list>
     </option>
   </component>
@@ -327,7 +326,7 @@
       <updated>1484138566296</updated>
       <workItem from="1484138567578" duration="3708000" />
       <workItem from="1488776782353" duration="86000" />
-      <workItem from="1488776986623" duration="3493000" />
+      <workItem from="1488776986623" duration="3969000" />
     </task>
     <task id="LOCAL-00001" summary="start work by eXP;">
       <created>1484141667223</created>
@@ -340,7 +339,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7287000" />
+    <option name="totallyTimeSpent" value="7763000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1096" extended-state="0" />
@@ -352,9 +351,9 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39918947" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -412,8 +411,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/exp/lesson_4/store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        <state relative-caret-position="252">
+          <caret line="45" column="2" lean-forward="false" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
           <folding />
         </state>
       </provider>

@@ -34,18 +34,16 @@ function txtStatement(customerArg, movies) {
 function htmlStatement(customerArg, movies) {
   const customer = new Customer(customerArg, movies);
   
-const amount = () => customer.totalAmount;
-  const frequentRenterPoints = () => customer.totalFrequentRentalPoints;
-  const movie = (aRental) => aRental.movie;
-  const rentalAmount = (aRental) => aRental.amount;
   let result = `<h1>Rental Record for <em>${customer.name}</em></h1>\n`;
   result += "<table>\n";
   for (let rental of customer.rentals) {
-    result += `  <tr><td>${movie(rental).title}</td><td>${rentalAmount(rental)}</td></tr>\n`;
+    result += `  <tr><td>${rental.movie.title}</td><td>${rental.amount}</td></tr>\n`;
   }
+  
   result += "</table>\n";
-  result += `<p>Amount owed is <em>${amount()}</em></p>\n`;
-  result += `<p>You earned <em>${frequentRenterPoints()}</em> frequent renter points</p>\n`;
+  result += `<p>Amount owed is <em>${customer.totalAmount}</em></p>\n`;
+  result += `<p>You earned <em>${customer.totalFrequentRentalPoints}</em> frequent renter points</p>\n`;
+  
   return result;
 }
 
