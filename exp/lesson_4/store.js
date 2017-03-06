@@ -3,7 +3,7 @@
 const Customer = require('./customer.js');
 
 function movieFor(rental) {
-  return movies[rental.movieID];
+  return rental.movie;
 }
 
 function getAmount(rental) {
@@ -53,8 +53,8 @@ function getTotalAmount(customer) {
   return totalAmount;
 }
 
-function txtStatement(customerArg) {
-  const customer = new Customer(customerArg);
+function txtStatement(customerArg, movies) {
+  const customer = new Customer(customerArg, movies);
   
   function buildHeader() {
     return `Rental Record for ${customer.name}\n`;
@@ -82,8 +82,8 @@ function txtStatement(customerArg) {
   return statement;
 }
 
-function htmlStatement(customerArg) {
-  const customer = new Customer(customerArg);
+function htmlStatement(customerArg, movies) {
+  const customer = new Customer(customerArg, movies);
   
   const amount = () => getTotalAmount(customer);
   const frequentRenterPoints = () => getTotalFrequentRenterPoints(customer);
@@ -123,5 +123,5 @@ let movies = {
   },
 };
 
-console.log(txtStatement(customer));
-console.log(htmlStatement(customer));
+console.log(txtStatement(customer, movies));
+console.log(htmlStatement(customer, movies));
