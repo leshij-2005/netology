@@ -15,6 +15,10 @@ class Rental {
   get movie() {
     return this._movies[this.movieID];
   }
+  
+  get frequentRentalPoints() {
+    return (this.movie.code === "new" && this.days > 2) ? 2 : 1;
+  }
 }
 
 module.exports = Rental;
