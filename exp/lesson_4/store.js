@@ -2,20 +2,6 @@
 
 const Customer = require('./customer.js');
 
-class Rental {
-  constructor(data) {
-    this._data = data;
-  }
-  
-  get movieID() {
-    return this._data.movieID;
-  }
-  
-  get days() {
-    return this._data.days;
-  }
-}
-
 function movieFor(rental) {
   return movies[rental.movieID];
 }
