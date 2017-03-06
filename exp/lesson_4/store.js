@@ -82,7 +82,9 @@ function txtStatement(customerArg) {
   return statement;
 }
 
-function htmlStatement(customer) {
+function htmlStatement(customerArg) {
+  const customer = new Customer(customerArg);
+  
   const amount = () => getTotalAmount(customer);
   const frequentRenterPoints = () => getTotalFrequentRenterPoints(customer);
   const movie = (aRental) => movieFor(aRental);
