@@ -2,9 +2,7 @@
 
 const Customer = require('./customer.js');
 
-function txtStatement(customerArg, movies) {
-  const customer = new Customer(customerArg, movies);
-  
+function txtStatement(customer) {
   function buildHeader() {
     return `Rental Record for ${customer.name}\n`;
   }
@@ -31,9 +29,7 @@ function txtStatement(customerArg, movies) {
   return statement;
 }
 
-function htmlStatement(customerArg, movies) {
-  const customer = new Customer(customerArg, movies);
-  
+function htmlStatement(customer) {
   let result = `<h1>Rental Record for <em>${customer.name}</em></h1>\n`;
   result += "<table>\n";
   for (let rental of customer.rentals) {
@@ -47,7 +43,7 @@ function htmlStatement(customerArg, movies) {
   return result;
 }
 
-let customer = {
+let data = {
   name: "martin",
   rentals: [{
     "movieID": "F001",
@@ -55,7 +51,7 @@ let customer = {
   }, {
     "movieID": "F002",
     "days": 1
-  },]
+  }]
 };
 
 let movies = {
@@ -69,5 +65,8 @@ let movies = {
   },
 };
 
-console.log(txtStatement(customer, movies));
-console.log(htmlStatement(customer, movies));
+
+const customer = new Customer(data, movies);
+
+console.log(txtStatement(customer));
+console.log(htmlStatement(customer));
