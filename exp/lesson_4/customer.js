@@ -15,6 +15,15 @@ class Customer {
   get rentals() {
     return this._data.rentals.map(rental => new Rental(rental, this._movies));
   }
+  
+  get totalFrequentrentalPoints() {
+    let total = 0;
+    for (let rental of this.rentals) {
+      total += rental.frequentRentalPoints;
+    }
+  
+    return total;
+  }
 }
 
 module.exports = Customer;

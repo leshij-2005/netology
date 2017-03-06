@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9c43492-a023-406a-8362-102bcb5fae51" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exp/lesson_4/rental.js" afterPath="$PROJECT_DIR$/exp/lesson_4/rental.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exp/lesson_4/customer.js" afterPath="$PROJECT_DIR$/exp/lesson_4/customer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exp/lesson_4/store.js" afterPath="$PROJECT_DIR$/exp/lesson_4/store.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,10 +24,9 @@
       <file leaf-file-name="store.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/exp/lesson_4/store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
+            <state relative-caret-position="35">
               <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
-                <element signature="n#!!block;n#getTotalFrequentRenterPoints#0" expanded="false" />
                 <element signature="n#!!block;n#getTotalAmount#0" expanded="false" />
               </folding>
             </state>
@@ -37,8 +36,8 @@
       <file leaf-file-name="customer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/exp/lesson_4/customer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="75" lean-forward="false" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
+            <state relative-caret-position="342">
+              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -72,8 +71,8 @@
       <list>
         <option value="$PROJECT_DIR$/nodejs/expressApi/rest.js" />
         <option value="$PROJECT_DIR$/exp/lesson-2/store.js" />
-        <option value="$PROJECT_DIR$/exp/lesson_4/customer.js" />
         <option value="$PROJECT_DIR$/exp/lesson_4/rental.js" />
+        <option value="$PROJECT_DIR$/exp/lesson_4/customer.js" />
         <option value="$PROJECT_DIR$/exp/lesson_4/store.js" />
       </list>
     </option>
@@ -206,7 +205,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager" selected="Node.js.store.js">
     <configuration default="false" name="rest.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="rest.js" working-dir="$PROJECT_DIR$/nodejs/expressApi">
@@ -330,7 +329,7 @@
       <updated>1484138566296</updated>
       <workItem from="1484138567578" duration="3708000" />
       <workItem from="1488776782353" duration="86000" />
-      <workItem from="1488776986623" duration="2481000" />
+      <workItem from="1488776986623" duration="2671000" />
     </task>
     <task id="LOCAL-00001" summary="start work by eXP;">
       <created>1484141667223</created>
@@ -343,7 +342,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6275000" />
+    <option name="totallyTimeSpent" value="6465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1096" extended-state="0" />
@@ -397,14 +396,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/exp/lesson-2/store.js" />
-    <entry file="file://$PROJECT_DIR$/exp/lesson_4/customer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="75" lean-forward="false" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/exp/lesson_4/rental.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -413,12 +404,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/exp/lesson_4/customer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/exp/lesson_4/store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
+        <state relative-caret-position="35">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#getTotalFrequentRenterPoints#0" expanded="false" />
             <element signature="n#!!block;n#getTotalAmount#0" expanded="false" />
           </folding>
         </state>
