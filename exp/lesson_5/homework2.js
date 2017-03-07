@@ -42,5 +42,17 @@ function formSetEditReport(idReport, printButton) {
 }
 
 function runUnitTest() {
-    formSetEditReport(123, printButton);
+    function createPrintButton() {
+        return {
+            print: print
+        };
+        
+        function print(text) {
+            console.log('Unit test mode');
+        }
+    }
+    
+    var printButton = createPrintButton();
+    
+    formSetEditReport(123, printButton.print);
 }
