@@ -2,7 +2,7 @@ function printButton(text) {
   $('#report_submit').val(text);
 }
 
-function formSetEditReport(idReport) {
+function formSetEditReport(idReport, printButton) {
     var report = {
         'type': ReportPlugin.defaultReportType,
         'format': ReportPlugin.defaultReportFormat,
@@ -14,10 +14,10 @@ function formSetEditReport(idReport) {
 
     if (idReport > 0) {
         report = ReportPlugin.reportList[idReport];
-      printButton(ReportPlugin.updateReportString);
+        printButton(ReportPlugin.updateReportString);
     }
     else {
-      printButton(ReportPlugin.createReportString);
+        printButton(ReportPlugin.createReportString);
     }
 
     toggleReportType(report.type);
@@ -42,5 +42,5 @@ function formSetEditReport(idReport) {
 }
 
 function runUnitTest() {
-    formSetEditReport(123);
+    formSetEditReport(123, printButton);
 }
