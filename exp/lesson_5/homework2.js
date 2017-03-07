@@ -36,3 +36,7 @@ function formSetEditReport(idReport) {
 
     $('#report_idreport').val(idReport);
 }
+
+function runUnitTest() {
+    formSetEditReport(123);
+}
