@@ -1,5 +1,15 @@
+function setDocumentTitle(title) {
+  document.title = (title || document.title);
+}
+
+function createSetDocumentTitle(isTestMode) {
+  return setDocumentTitle;
+}
+
 function checkURL(isTestMode) {
     isTestMode - isTestMode || false;
+    
+    var setDocumentTitle = createSetDocumentTitle(isTestMode);
     
     //get the url by removing the hash
     var url = location.hash.replace(/^#/, '');
@@ -7,6 +17,7 @@ function checkURL(isTestMode) {
     container = $('#content');
     // Do this if url exists (for page refresh, etc...)
     if (url) {
+        // remove all active class
         // remove all active class
         $('nav li.active').removeClass("active");
         // match the url and add the active class
@@ -28,9 +39,4 @@ function checkURL(isTestMode) {
         window.location.hash = $this.attr('href');
 
     }
-    
-    function setDocumentTitle(title) {
-      document.title = (title || document.title);
-    }
-
 }
