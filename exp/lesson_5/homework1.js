@@ -1,9 +1,15 @@
 function setDocumentTitle(title) {
-  document.title = (title || document.title);
+    document.title = (title || document.title);
 }
 
 function createSetDocumentTitle(isTestMode) {
-  return setDocumentTitle;
+    if (isTestMode) {
+        return function() {
+            console.log('Unit test mode')
+        }
+    }
+    
+    return setDocumentTitle;
 }
 
 function checkURL(isTestMode) {
@@ -39,4 +45,8 @@ function checkURL(isTestMode) {
         window.location.hash = $this.attr('href');
 
     }
+}
+
+function runUnitTest() {
+  checkURL(true);
 }
