@@ -1,5 +1,6 @@
-function checkURL() {
-
+function checkURL(isTestMode) {
+    isTestMode - isTestMode || false;
+    
     //get the url by removing the hash
     var url = location.hash.replace(/^#/, '');
 
@@ -13,7 +14,7 @@ function checkURL() {
         var title = ($('nav a[href="' + url + '"]').attr('title'))
 
         // change page title from global var
-        document.title = (title || document.title);
+        setDocumentTitle(title);
         //console.log("page title: " + document.title);
 
         // parse url to jquery
@@ -26,6 +27,10 @@ function checkURL() {
         //update hash
         window.location.hash = $this.attr('href');
 
+    }
+    
+    function setDocumentTitle(title) {
+      document.title = (title || document.title);
     }
 
 }
