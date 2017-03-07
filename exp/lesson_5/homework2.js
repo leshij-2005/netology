@@ -1,3 +1,7 @@
+function printButton(text) {
+  $('#report_submit').val(text);
+}
+
 function formSetEditReport(idReport) {
     var report = {
         'type': ReportPlugin.defaultReportType,
@@ -10,10 +14,10 @@ function formSetEditReport(idReport) {
 
     if (idReport > 0) {
         report = ReportPlugin.reportList[idReport];
-        $('#report_submit').val(ReportPlugin.updateReportString);
+      printButton(ReportPlugin.updateReportString);
     }
     else {
-        $('#report_submit').val(ReportPlugin.createReportString);
+      printButton(ReportPlugin.createReportString);
     }
 
     toggleReportType(report.type);
