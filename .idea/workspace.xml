@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9c43492-a023-406a-8362-102bcb5fae51" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exp/lesson_6/homework.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exp/lesson_5/homework2.js" afterPath="$PROJECT_DIR$/exp/lesson_5/homework2.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,11 +21,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="homework2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homework2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/exp/lesson_5/homework2.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="346">
               <caret line="47" column="10" lean-forward="false" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homework.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/exp/lesson_6/homework.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="87" column="2" lean-forward="false" selection-start-line="87" selection-start-column="2" selection-end-line="87" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -41,6 +51,7 @@
       <list>
         <option value="$PROJECT_DIR$/exp/lesson_5/homework1.js" />
         <option value="$PROJECT_DIR$/exp/lesson_5/homework2.js" />
+        <option value="$PROJECT_DIR$/exp/lesson_6/homework.js" />
       </list>
     </option>
   </component>
@@ -128,7 +139,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lesson_5" />
+              <option name="myItemId" value="lesson_6" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -145,11 +156,14 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
-  <component name="RunManager" selected="Node.js.homework2.js">
+  <component name="RunManager" selected="Node.js.homework.js">
     <configuration default="false" name="store.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="store.js" working-dir="$PROJECT_DIR$/exp/lesson_2">
       <method />
     </configuration>
     <configuration default="false" name="homework2.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="homework2.js" working-dir="$PROJECT_DIR$/exp/lesson_5">
+      <method />
+    </configuration>
+    <configuration default="false" name="homework.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="homework.js" working-dir="$PROJECT_DIR$/exp/lesson_6">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -205,14 +219,16 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Node.js.store.js" />
       <item index="1" class="java.lang.String" itemvalue="Node.js.homework2.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.homework.js" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.homework2.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.store.js" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.homework.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.homework2.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.store.js" />
       </list>
     </recent_temporary>
   </component>
@@ -226,12 +242,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1488871765514</updated>
-      <workItem from="1488871782117" duration="3236000" />
+      <workItem from="1488871782117" duration="4064000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3317000" />
+    <option name="totallyTimeSpent" value="4145000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
@@ -357,6 +373,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
           <caret line="47" column="10" lean-forward="false" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exp/lesson_6/homework.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="87" column="2" lean-forward="false" selection-start-line="87" selection-start-column="2" selection-end-line="87" selection-end-column="2" />
           <folding />
         </state>
       </provider>
