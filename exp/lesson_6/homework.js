@@ -13,13 +13,15 @@ var items = {
 };
 
 var taxesByState = {
-  "Alabama": { Base: 0.04, Groceries: 0},
-  "Alaska": { Base: 0, Groceries: 0, PrescriptionDrug: 0},
+  "Alabama": { Base: 0.04, Groceries: 0 },
+  "Alaska": { Base: 0, Groceries: 0, PrescriptionDrug: 0 },
   "Arizona": { Base: 0.056 },
   "Arkansas": { Base: 0.065, Groceries: 0.015 },
   "California": { Base: 0.075 },
   "Colorado": { Base: 0.029 },
-  "Connecticut": { Base: 0.0635 }
+  "Connecticut": { Base: 0.0635 },
+  "Tennessee": { Base: 0.07, Groceries: 0.05, PreparedFood: 0, PrescriptionDrug: 0 },
+  "Texas": { Base: 0.0625, PreparedFood: 0 }
 };
 
 function base(state) {
