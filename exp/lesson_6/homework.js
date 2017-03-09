@@ -12,28 +12,6 @@ var items = {
   "ceasar salad": {price: 4.2, type: "PreparedFood"},
 };
 
-var itemTypes =
-  {
-    "Groceries": {
-      "Alabama": 0,
-      "Alaska": 0,
-      "Arizona": "",
-      "Arkansas": 0.015,
-      "California": "",
-      "Colorado": "",
-      "Connecticut": ""
-    },
-    "PrescriptionDrug": {
-      "Alabama": "",
-      "Alaska": 0,
-      "Arizona": "",
-      "Arkansas": "",
-      "California": "",
-      "Colorado": "",
-      "Connecticut": ""
-    }
-  };
-
 var taxesByState = {
   "Alabama": { Base: 0.04, Groceries: 0},
   "Alaska": { Base: 0, Groceries: 0, PrescriptionDrug: 0},
@@ -135,14 +113,14 @@ function assertEquals(expected, actual) {
 function runAllTests(tests) {
   var failedTests = tests
       .map((f) => f())
-.map((code) => {
-    if (code === -1) {
-    return 1
-  } else {
-    return 0
-  }
-})
-.reduce((a, b) => a + b, 0);
+      .map((code) => {
+          if (code === -1) {
+          return 1
+        } else {
+          return 0
+        }
+      })
+      .reduce((a, b) => a + b, 0);
   
   if (failedTests === 0) {
     console.log(`Success: ${tests.length} tests passed.`);
