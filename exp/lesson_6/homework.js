@@ -32,24 +32,35 @@ function calc(state, itemType) {
   return itemTypeTaxModifier === undefined ? 0 : base(state) + itemTypeTaxModifier;
 }
 
+function calculatePriceFor(state, item) {
+  var result = 0;
+  
+  if (items[item].type === "PreparedFood") {
+    result = (1 + base(state)) * items[item].price;
+  }
+  else {
+    result = calc(state, items[item].type) * items[item].price + items[item].price;
+  }
+  
+  return result;
+}
+
 class TaxCalculator {
   // У этой функции нелья менять интерфейс
   // Но можно менять содержимое
   calculateTax() {
     var ordersCount = getOrdersCount();
     var state = getSelectedState();
+    
     console.log(`----------${state}-----------`);
+    
     for (var i = 0; i < ordersCount; i++) {
       var item = getSelectedItem();
-      var result = null;
-      if (items[item].type === "PreparedFood") {
-        result = ( 1 + base(state) ) * items[item].price;
-      }
-      else {
-        result = calc(state, items[item].type) * items[item].price + items[item].price;
-      }
+      var result = calculatePriceFor(state, item);
+      
       console.log(`${item}: $${result.toFixed(2)}`);
     }
+    
     console.log(`----Have a nice day!-----`);
   }
 }
@@ -65,15 +76,11 @@ var tests = [
   () => assertEquals(0.4 * (1 + 0.015 + 0.065), calculatePriceFor("Arkansas", "coca-cola")),
   () => assertEquals(6.7 * (1 + 0.0), calculatePriceFor("Alaska", "amoxicillin")),
   () => assertEquals(6.7 * (1 + 0.0), calculatePriceFor("California", "amoxicillin")),
-  // () => assertEquals(2 * (1 + 0.0635), calculatePriceFor("Connecticut", "hamburger")),
+  () => assertEquals(2 * (1 + 0.0635), calculatePriceFor("Connecticut", "hamburger"))
 ];
 
 //Раскомментируйте следующую строчку для запуска тестов:
-runAllTests (tests);
-
-function calculatePriceFor(state, item) {
-  return calc(state, items[item].type) * items[item].price + items[item].price;
-}
+runAllTests(tests);
 
 //############################
 //Код ниже этой строчки не надо менять для выполнения домашней работы
