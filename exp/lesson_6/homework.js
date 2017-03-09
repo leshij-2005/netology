@@ -79,7 +79,9 @@ var tests = [
   () => assertEquals(0.4 * (1 + 0.015 + 0.065), calculatePriceFor("Arkansas", "coca-cola")),
   () => assertEquals(6.7 * (1 + 0.0), calculatePriceFor("Alaska", "amoxicillin")),
   () => assertEquals(6.7 * (1 + 0.0), calculatePriceFor("California", "amoxicillin")),
-  () => assertEquals(2 * (1 + 0.0635), calculatePriceFor("Connecticut", "hamburger"))
+  () => assertEquals(2 * (1 + 0.0635), calculatePriceFor("Connecticut", "hamburger")),
+  () => assertEquals(5.5 * (1 + 0.07 + 0.05), calculatePriceFor("Tennessee", "milk")),
+  () => assertEquals(2 * (1 + 0.0625), calculatePriceFor("Texas", "hamburger"))
 ];
 
 //Раскомментируйте следующую строчку для запуска тестов:
