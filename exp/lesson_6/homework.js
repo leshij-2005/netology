@@ -49,17 +49,9 @@ function base(state) {
 }
 
 function calc(state, itemType) {
+  var itemTypeTaxModifier = taxesByState[state][itemType];
   
-  function getTaxModifier(type, state) {
-    return taxesByState[state][type];
-  }
-  
-  var itemTypeTaxModifier = getTaxModifier(itemType, state);
-  if (itemTypeTaxModifier === undefined) {
-    return 0;
-  }
-  
-  return base(state) + itemTypeTaxModifier;
+  return itemTypeTaxModifier === undefined ? 0 : base(state) + itemTypeTaxModifier;
 }
 
 class TaxCalculator {
