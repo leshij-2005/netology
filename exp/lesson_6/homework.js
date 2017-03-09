@@ -50,15 +50,16 @@ function base(state) {
 
 function calc(state, itemType) {
   
-  function getTaxModifier(type) {
-    return itemTypes[type];
+  function getTaxModifier(type, state) {
+    return taxesByState[state][type];
   }
   
-  var itemTypeTaxModifier = getTaxModifier(itemType);
-  if (itemTypeTaxModifier[state] === "") {
+  var itemTypeTaxModifier = getTaxModifier(itemType, state);
+  if (itemTypeTaxModifier === undefined) {
     return 0;
   }
-  return base(state) + itemTypeTaxModifier[state];
+  
+  return base(state) + itemTypeTaxModifier;
 }
 
 class TaxCalculator {
