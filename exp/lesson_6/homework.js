@@ -50,7 +50,11 @@ function base(state) {
 
 function calc(state, itemType) {
   
-  var itemTypeTaxModifier = itemTypes[itemType];
+  function getTaxModifier(type) {
+    return itemTypes[type];
+  }
+  
+  var itemTypeTaxModifier = getTaxModifier(itemType);
   if (itemTypeTaxModifier[state] === "") {
     return 0;
   }
