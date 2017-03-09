@@ -34,6 +34,16 @@ var itemTypes =
     }
   };
 
+var taxesByState = {
+  "Alabama": { Base: 0.04, Groceries: 0},
+  "Alaska": { Base: 0, Groceries: 0, PrescriptionDrug: 0},
+  "Arizona": { Base: 0.056 },
+  "Arkansas": { Base: 0.065, Groceries: 0.015 },
+  "California": { Base: 0.075 },
+  "Colorado": { Base: 0.029 },
+  "Connecticut": { Base: 0.0635 }
+};
+
 function base(state) {
   var taxes = {
     "Alabama": 0.04,
