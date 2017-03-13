@@ -3,23 +3,23 @@ const VideoStore = require('../src/videoStore');
 const Customer = require('../src/customer');
 
 describe('Video store tests', () => {
-	describe('when customer take movie', () => {
-		it('if take movie Batman', () => {
+	describe('when customer takes movie', () => {
+		it('customer can take single movie', () => {
 			let videoStore = new VideoStore();
 			let customer = new Customer();
 
-			videoStore.give(customer, ['Batman']);
+			videoStore.rent(customer, ['Batman']);
 
 			assert.equal('Batman', customer.lastMovie);
 		});
 
-		it ('if customer not return movie', () => {
+		it (`customer can't take movie if not return movie`, () => {
 			let videoStore = new VideoStore({
 				Den: ['Spider Man']
 			});
 			let customer = new Customer('Den');
 
-			videoStore.give(customer, ['Batman']);
+			videoStore.rent(customer, ['Batman']);
 
 			assert.equal(0, customer.movies.length);
 		});
@@ -30,7 +30,7 @@ describe('Video store tests', () => {
 			let videoStore = new VideoStore();
 			let customer = new Customer();
 
-			videoStore.give(customer, ['Batman', 'Spider Man']);
+			videoStore.rent(customer, ['Batman', 'Spider Man']);
 
 			assert.equal(10, customer.discount);
 		});
@@ -39,18 +39,22 @@ describe('Video store tests', () => {
 			let videoStore = new VideoStore();
 			let customer = new Customer();
 
-			videoStore.give(customer, ['Batman', 'Spider Man', 'X-man', 'Superman']);
+			videoStore.rent(customer, ['Batman', 'Spider Man', 'X-man', 'Superman']);
 
 			assert.equal(15, customer.discount);
 		});
 
-		it ('if take 6 movies customer have 5 movies', () => {
+		it (`customer can't take more 6 movies`, () => {
 			let videoStore = new VideoStore();
 			let customer = new Customer();
 
-			videoStore.give(customer, ['Batman', 'Spider Man', 'X-man', 'Superman', 'Deadpool', 'Iron Man']);
+			let movies = ['Batman', 'Spider Man', 'X-man', 'Superman', 'Deadpool', 'Iron Man'];
 
-			assert.equal(5, customer.movies.length);
+			try {
+				videoStore.rent(customer, movies);
+			} catch (error) {
+				assert.equal('Rent does not issue more than 5 films!', error.message);
+			}
 		});
 	})
 });

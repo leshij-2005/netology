@@ -10,11 +10,15 @@ class VideoStore {
 		this._archive[customer].push(movies);
 	}
 
-	give(customer, movies) {
+	rent(customer, movies) {
 		const archive = this.getFromArchive(customer.name);
 
 		if (archive && archive.length) {
 			return;
+		}
+
+		if (movies.length > 5) {
+			throw new Error('Rent does not issue more than 5 films!');
 		}
 
 		customer.take(movies);

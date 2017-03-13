@@ -22,10 +22,6 @@ class Customer {
 	}
 
 	take(movies) {
-		if (movies.length > 5) {
-			movies = movies.slice(0, 5);
-		}
-
 		this._movies.push(...movies);
 	}
 }
