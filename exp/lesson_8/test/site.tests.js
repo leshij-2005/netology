@@ -7,8 +7,12 @@ class TestCustomer {
 		return new Customer();
 	}
 
-	getCustomerWithBrtrhday() {
-		return new Customer(true);
+	getCustomerWithBirthday() {
+		return new Customer({ birthday: true });
+	}
+
+	getCustomerWithBonus() {
+		return new Customer({ bonus: 100 });
 	}
 }
 
@@ -26,11 +30,11 @@ describe('Given: Customer want X pizzas', () => {
 		{askedPizzas: 5, expectedPizzas: 5}
 	];
 
-	let customer = testCustomer.getCustomer();
-
 	describe('When: Customer buy X pizzas', () => {
 		testCases.forEach(function (testCase) {
 			it('Then: Customer got a order with ' + testCase.askedPizzas + ' pizzas', function () {
+				let customer = testCustomer.getCustomer();
+
 				site.makeOrder(customer, { pizzas: testCase.askedPizzas });
 
 				expect(customer.purchase.pizzas).is.equal(testCase.expectedPizzas);
@@ -46,11 +50,11 @@ describe('Given: Customer birthday', () => {
 		{askedPizzas: 5, expectedPizzas: 6}
 	];
 
-	let customer = testCustomer.getCustomerWithBrtrhday();
-
 	describe('When: Customer buy X pizzas', () => {
 		testCases.forEach(function (testCase) {
 			it('Then: Customer got a order with ' + testCase.askedPizzas + '+1 pizzas', function () {
+				let customer = testCustomer.getCustomerWithBirthday();
+
 				site.makeOrder(customer, { pizzas: testCase.askedPizzas });
 
 				expect(customer.purchase.pizzas).is.equal(testCase.expectedPizzas);
@@ -66,11 +70,11 @@ describe('Given: Customer want X pizzas', () => {
 		{askedPizzas: 5, expectedAmount: 400}
 	];
 
-	let customer = testCustomer.getCustomer();
-
 	describe('When: Customer buy X pizzas and enter promo code ABCD', () => {
 		testCases.forEach(function (testCase) {
 			it('Then: Customer got a order for an amount ' + testCase.askedPizzas * site.price + '-100', function () {
+				let customer = testCustomer.getCustomer();
+
 				site.makeOrder(customer, { pizzas: testCase.askedPizzas }, 'ABCD');
 
 				expect(customer.purchase.amount).is.equal(testCase.expectedAmount);
@@ -89,6 +93,20 @@ describe('Given: Customer want 5 pizzas', () => {
 			site.makeOrder(customer, { pizzas: askedPizzas });
 
 			expect(customer.bonus).is.equal(expectedBonus);
+		});
+	});
+});
+
+describe('Given: Customer want 2 pizzas', () => {
+	describe('When: Customer buy 2 pizzas and pays bonuses 100', () => {
+		it('Then: Customer got order an amount 100', function () {
+			let askedPizzas = 2;
+			let expectedAmount = 2 * 100 - 100;
+			let customer = testCustomer.getCustomerWithBonus();
+
+			site.makeOrder(customer, { pizzas: askedPizzas });
+
+			expect(customer.purchase.amount).is.equal(expectedAmount);
 		});
 	});
 });

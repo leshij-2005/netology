@@ -8,6 +8,10 @@ class Site {
 		return this._price;
 	}
 
+	get orders() {
+		return this._orders;
+	}
+
 	makeOrder(customer, order, promo) {
 		if (customer.birthday) {
 			order.pizzas += 1;
@@ -18,6 +22,10 @@ class Site {
 		if (promo == 'ABCD') {
 			order.discount = 100;
 			order.amount -= order.discount;
+		}
+
+		if (customer.bonus) {
+			order.amount -= customer.bonus;
 		}
 
 		customer.buy(order);

@@ -1,8 +1,8 @@
 class Customer {
-	constructor(isBirthday = false) {
+	constructor(props = {}) {
 		this._purchase = {};
-		this._birthday = isBirthday;
-		this._bonus = 0;
+		this._birthday = props.birthday || false;
+		this._bonus = props.bonus || 0;
 	}
 
 	buy(order) {
