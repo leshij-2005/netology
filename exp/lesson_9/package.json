@@ -1,0 +1,15 @@
+{
+  "name": "netology-xp-unit-testing-test-smells",
+  "description": "XP. Unit testing. Test Smells",
+  "scripts": {
+    "test": "mocha --ui tdd -R spec tests/*.js"
+  },
+  "author": "SmartStepGroup",
+  "devDependencies": {
+    "mocha": "~2.4.5",
+    "chai": "~3.5.0",
+    "chai-http": "~2.0.1",
+    "chai-string": "~1.2.0",
+    "username": "~2.2.2"
+  }
+}
