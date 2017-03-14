@@ -1,10 +1,15 @@
 class Customer {
-	constructor() {
+	constructor(isBirthday = false) {
 		this._purchase = {};
+		this._birthday = isBirthday;
 	}
 
 	buy(order) {
 		this._purchase = order;
+	}
+
+	get birthday() {
+		return this._birthday;
 	}
 
 	get purchase() {
