@@ -33,5 +33,6 @@ class Site {
 		this._orders = {};
 	}
 }
+
 module.exports = Site;
 

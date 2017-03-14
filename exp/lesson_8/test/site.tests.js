@@ -68,13 +68,27 @@ describe('Given: Customer want X pizzas', () => {
 
 	let customer = testCustomer.getCustomer();
 
-	describe('When: Customer buy X pizzas and enter promocode ABCD', () => {
+	describe('When: Customer buy X pizzas and enter promo code ABCD', () => {
 		testCases.forEach(function (testCase) {
 			it('Then: Customer got a order for an amount ' + testCase.askedPizzas * site.price + '-100', function () {
 				site.makeOrder(customer, { pizzas: testCase.askedPizzas }, 'ABCD');
 
 				expect(customer.purchase.amount).is.equal(testCase.expectedAmount);
 			});
+		});
+	});
+});
+
+describe('Given: Customer want 5 pizzas', () => {
+	describe('When: Customer buy 5 pizzas', () => {
+		it('Then: Customer got 5% of order amount to bonus', function () {
+			let askedPizzas = 5;
+			let expectedBonus = 5 * 100 * 0.05;
+			let customer = testCustomer.getCustomer();
+
+			site.makeOrder(customer, { pizzas: askedPizzas });
+
+			expect(customer.bonus).is.equal(expectedBonus);
 		});
 	});
 });
