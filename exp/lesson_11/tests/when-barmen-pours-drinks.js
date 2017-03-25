@@ -21,11 +21,26 @@ suite('When barmen pours drinks', function () {
     });
 
     suite('cupboard is full', function () {
+		    test('barmen gave a check on pour drink', function () {
+			      const cashRegisterMock = sinon.mock(cashRegister);
+
+			      barmen = new Barmen(cupboard, cashRegister);
+
+			      cashRegisterMock.expects('print')
+				        .once()
+				        .withArgs('beer', 100);
+
+			      barmen.pour('beer', 100, visitor);
+
+			      cashRegisterMock.verify();
+			      cashRegisterMock.restore();
+		    });
+
 		    test('drink is over and smsService send message', function () {
 		    	  const smsService = new SmsService();
 		    	  const smsServiceMock = sinon.mock(smsService);
 
-			      smsServiceMock.expects("send")
+			      smsServiceMock.expects('send')
 						    .once()
 						    .withArgs('Light beer is over. Order another keg!');
 
