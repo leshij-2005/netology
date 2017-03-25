@@ -5,6 +5,7 @@ let Barmen = require('../src/barmen');
 let Visitor = require('../src/visitor');
 let Cupboard = require('./fakes/cupboard-stub');
 let Calendar = require('./fakes/calendar-stub');
+let CashRegister = require('./fakes/cashRegister-mock');
 
 suite('When barmen pours drinks', function () {
     let visitor = {};
@@ -14,7 +15,7 @@ suite('When barmen pours drinks', function () {
 
     setup(function () {
         calendar = new Calendar();
-	      cashRegister = new CashRegisterMock();
+	      cashRegister = new CashRegister();
         visitor = new Visitor();
         visitor.sober();
     });
@@ -39,18 +40,4 @@ suite('When barmen pours drinks', function () {
 	      });
     });
 });
-
-class CashRegisterMock {
-	constructor() {
-		this._lastCheck = '';
-	}
-
-	get lastCheck() {
-		return this._lastCheck;
-	}
-
-	print(drink, volume) {
-		this._lastCheck = `Buy ${drink} (${volume})`;
-	}
-}
 
