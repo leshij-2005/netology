@@ -15,6 +15,10 @@ class Barmen {
 
 	pour(drinkName, volume, visitor, calendar = new Calendar) {
 		if (!this._cupboard.hasDrink(drinkName, volume)) {
+			if (this._smsService) {
+				this._smsService.send(`${drinkName} is over. Order another keg!`);
+			}
+
 			throw new Error('Sorry. Not enough ' + drinkName);
 		}
 

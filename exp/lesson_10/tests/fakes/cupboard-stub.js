@@ -16,6 +16,9 @@ class Cupboard {
 	}
 
 	hasDrink(drinkName, volume) {
+		if (drinkName == 'Light beer')
+			return false;
+
 		return true;
 	}
 

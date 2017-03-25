@@ -43,16 +43,32 @@ suite('When barmen pours drinks', function () {
 
             assert.equal(cashRegister.lastCheck, 'Buy beer (100)');
 	      });
+
+		    test('drink is over and smsService send message', function () {
+			      barmen = new Barmen(cupboard, cashRegister, smsService);
+
+			      runWithTryCatch(() => {
+				      barmen.pour('Light beer', 100, visitor);
+			      });
+
+			      assert.equal(smsService.lastSentSms, 'Light beer is over. Order another keg!');
+		    });
+
+		    const runWithTryCatch = (action) => {
+				    try {
+					      action();
+				    } catch (exception) { }
+		    }
     });
 
-	suite('cupboard is locked', function () {
-		test('smsService send message', function () {
-			cupboard.isLocked = true;
+	  suite('cupboard is locked', function () {
+		    test('smsService send message', function () {
+			      cupboard.isLocked = true;
 
-			barmen = new Barmen(cupboard, cashRegister, smsService);
+			      barmen = new Barmen(cupboard, cashRegister, smsService);
 
-			assert.equal(smsService.lastSentSms, 'Cupboard is locked and key is lost');
-		});
-	});
+			      assert.equal(smsService.lastSentSms, 'Cupboard is locked and key is lost');
+		    });
+	  });
 });
 
