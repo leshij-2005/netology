@@ -24,13 +24,28 @@ suite('When barmen pours drinks', function () {
 class CupboardStub {
 	isOpen() {
 		return true;
-	};
+	}
 
 	hasDrink(drinkName, volume) {
 		return true;
-	};
+	}
 
 	getDrink(drinkName, volume) {
 		return volume;
 	}
 }
+
+class CalendarStub {
+	constructor() {
+		this._today = "";
+	}
+
+	get today() {
+		return this._today;
+	}
+
+	set today(value) {
+		this._today = value;
+	}
+}
+
