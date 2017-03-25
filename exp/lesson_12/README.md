@@ -1,0 +1,1 @@
+## Выполните задания по ссылке http://osherove.com/tdd-kata-1/
