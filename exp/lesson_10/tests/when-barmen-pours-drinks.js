@@ -6,6 +6,7 @@ let Visitor = require('../src/visitor');
 let Cupboard = require('./fakes/cupboard-stub');
 let Calendar = require('./fakes/calendar-stub');
 let CashRegister = require('./fakes/cashRegister-mock');
+let SmsService = require('./fakes/smsService-mock');
 
 suite('When barmen pours drinks', function () {
     let visitor = {};
@@ -18,7 +19,7 @@ suite('When barmen pours drinks', function () {
     setup(function () {
         calendar = new Calendar();
 	      cashRegister = new CashRegister();
-	      smsService = new SmsServiceMock();
+	      smsService = new SmsService();
 	      cupboard = new Cupboard();
         visitor = new Visitor();
         visitor.sober();
@@ -54,18 +55,4 @@ suite('When barmen pours drinks', function () {
 		});
 	});
 });
-
-class SmsServiceMock {
-	constructor() {
-		this._lastSentSms = '';
-	}
-
-	send(message) {
-		this._lastSentSms = message;
-	}
-
-	get lastSentSms() {
-		return this._lastSentSms;
-	}
-}
 
