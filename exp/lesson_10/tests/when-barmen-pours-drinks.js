@@ -20,3 +20,17 @@ suite('When barmen pours drinks', function () {
         });
     });
 });
+
+class CupboardStub {
+	isOpen() {
+		return true;
+	};
+
+	hasDrink(drinkName, volume) {
+		return true;
+	};
+
+	getDrink(drinkName, volume) {
+		return volume;
+	}
+}
