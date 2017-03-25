@@ -1,15 +1,15 @@
 class Visitor {
 	constructor() {
 		this._totalDrinkVolume = 0;
-		this._bithdate = null;
+		this._birthdate = null;
 	}
 
-	get bithdate() {
-		return this._bithdate;
+	get birthdate() {
+		return this._birthdate;
 	}
 
-	set bithdate(value) {
-		this._bithdate = value;
+	set birthdate(value) {
+		this._birthdate = value;
 	}
 
 	drink(volume) {

@@ -20,12 +20,12 @@ suite('When barmen pours drinks', function () {
     suite('cupboard is full', function () {
         test('barmen pours x3 volume on a birthday', function () {
             barmen = new Barmen(new Cupboard());
-            visitor.bithdate = '01.01.2017';
-            calendar.today = '01.01.2017';
+            visitor.birthdate = '01.01.2017';
+	          calendar.today = '01.01.2017';
 
             const volumeInGlass = barmen.pour('beer', 100, visitor, calendar);
 
-            assert(300, volumeInGlass);
+            assert.equal(volumeInGlass, 300);
         });
     });
 });
