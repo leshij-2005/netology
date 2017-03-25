@@ -1,24 +1,32 @@
 class Visitor {
-    constructor() {
-        this.totalDrinkVolume = 0;
-    }
+	constructor() {
+		this._totalDrinkVolume = 0;
+		this._bithdate = null;
+	}
 
-    drink(volume) {
-        this.totalDrinkVolume += volume;
-        return volume;
-    }
+	get bithdate() {
+		return this._bithdate;
+	}
 
-    sober() {
-        this.totalDrinkVolume = 0;
-    }
+	set bithdate(value) {
+		this._bithdate = value;
+	}
 
-    isTotallyDrunk() {
-        return this.totalDrinkVolume > 150;
-    }
+	drink(volume) {
+		this._totalDrinkVolume += volume;
+		return volume;
+	}
 
-    getTotallyDrunk() {
-        return this.totalDrinkVolume;
-    }
+	sober() {
+		this._totalDrinkVolume = 0;
+	}
+
+	isTotallyDrunk() {
+		return this._totalDrinkVolume > 150;
+	}
+
+	getTotallyDrunk() {
+		return this._totalDrinkVolume;
+	}
 }
-
 module.exports = Visitor;
