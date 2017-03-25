@@ -10,9 +10,11 @@ suite('When barmen pours drinks', function () {
     let visitor = {};
     let barmen = {};
     let calendar = {};
+    let cashRegister = {};
 
     setup(function () {
         calendar = new Calendar();
+	      cashRegister = new CashRegisterMock();
         visitor = new Visitor();
         visitor.sober();
     });
@@ -27,6 +29,28 @@ suite('When barmen pours drinks', function () {
 
             assert.equal(volumeInGlass, 300);
         });
+
+	      test('barmen gave a check on pour drink', function () {
+            barmen = new Barmen(new Cupboard(), cashRegister);
+
+            barmen.pour('beer', 100, visitor);
+
+            assert.equal(cashRegister.lastCheck, 'Buy beer (100)');
+	      });
     });
 });
+
+class CashRegisterMock {
+	constructor() {
+		this._lastCheck = '';
+	}
+
+	get lastCheck() {
+		return this._lastCheck;
+	}
+
+	print(drink, volume) {
+		this._lastCheck = `Buy ${drink} (${volume})`;
+	}
+}
 
