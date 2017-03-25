@@ -3,9 +3,14 @@
 const Calendar = require('./calendar');
 
 class Barmen {
-	constructor(cupboard, cashRegister) {
+	constructor(cupboard, cashRegister, smsService) {
 		this._cupboard = cupboard;
 		this._cashRegister = cashRegister;
+		this._smsService = smsService;
+
+		if (this._smsService && this._cupboard.isLocked) {
+		  this._smsService.send('Cupboard is locked and key is lost');
+    }
 	}
 
 	pour(drinkName, volume, visitor, calendar = new Calendar) {
