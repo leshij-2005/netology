@@ -1,0 +1,13 @@
+{
+  "name": "netology-xp-unit-testing-test-doubles",
+  "scripts": {
+    "test": "mocha --ui tdd -R spec tests/*.js"
+  },
+  "devDependencies": {
+    "mocha": "~2.4.5",
+    "chai": "~3.5.0",
+    "chai-http": "~2.0.1",
+    "chai-string": "~1.2.0",
+    "sinon": "latest"
+  }
+}
