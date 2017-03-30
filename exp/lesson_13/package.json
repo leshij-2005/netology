@@ -1,0 +1,12 @@
+{
+  "name": "netology-xp-tdd-new-domain",
+  "scripts": {
+    "test": "mocha --ui tdd -R spec tests/*.js"
+  },
+  "devDependencies": {
+    "mocha": "~2.4.5",
+    "chai": "~3.5.0",
+    "chai-string": "~1.2.0"
+  }
+}
+
