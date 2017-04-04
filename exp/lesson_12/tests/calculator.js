@@ -33,4 +33,12 @@ suite('String calculator should', function () {
     
     assert.equal(sum, 6);
   });
+  
+  test('return 6 when value is 1\n2,3', function () {
+    const calculator = new Calculator();
+    
+    const sum = calculator.add('1\n2,3');
+    
+    assert.equal(sum, 6);
+  });
 });

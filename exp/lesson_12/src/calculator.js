@@ -20,11 +20,11 @@ class Calculator {
   }
   
   _isMultipleNumbers(value) {
-    return value.indexOf(',') !== -1;
+    return value.indexOf(',') !== -1 || value.indexOf('\n') !== -1;
   }
   
   _parseMultipleNumbers(value) {
-    const numbers = value.split(',');
+    const numbers = value.split(/[\n,]/);
     
     return numbers.reduce((a, b) => this._parseNumber(a) + this._parseNumber(b));
   }
