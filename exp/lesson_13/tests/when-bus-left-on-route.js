@@ -20,5 +20,11 @@ suite('when bus left on the route', function(){
     
     assert.equal(bus.state, 'not_full');
   });
+  
+  test('when bus receive two passenger then bus is full', function() {
+    bus.receive([new Passenger(), new Passenger()]);
+    
+    assert.equal(bus.state, 'full');
+  });
 });
 

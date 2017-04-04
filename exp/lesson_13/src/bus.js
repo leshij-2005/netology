@@ -1,6 +1,7 @@
 class Bus {
   constructor() {
     this._state = 'undefined';
+    this._maxCount = 2;
     this._passengers = [];
   }
   
@@ -23,7 +24,11 @@ class Bus {
   receive(passengers) {
     this._passengers.push(...passengers);
     
-    this._setState('not_full');
+    if (this._passengers.length < this._maxCount) {
+      this._setState('not_full');
+    } else {
+      this._setState('full');
+    }
   }
 }
 
