@@ -17,4 +17,12 @@ suite('String calculator should', function () {
     
     assert.equal(sum, 1);
   });
+  
+  test('return 3 when value is 1,2', function () {
+    const calculator = new Calculator();
+    
+    const sum = calculator.add('1,2');
+    
+    assert.equal(sum, 3);
+  });
 });
