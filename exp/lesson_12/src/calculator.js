@@ -9,7 +9,7 @@ class Calculator {
     }
     
     if (this._isMultipleNumbers(value)) {
-      return this._parseMupltipleNumbers(value);
+      return this._parseMultipleNumbers(value);
     }
     
     return this._parseNumber(value);
@@ -23,10 +23,10 @@ class Calculator {
     return value.indexOf(',') !== -1;
   }
   
-  _parseMupltipleNumbers(value) {
+  _parseMultipleNumbers(value) {
     const numbers = value.split(',');
-  
-    return this._parseNumber(numbers[0]) + this._parseNumber(numbers[1]);
+    
+    return numbers.reduce((a, b) => this._parseNumber(a) + this._parseNumber(b));
   }
 }
 
