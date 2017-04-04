@@ -3,6 +3,7 @@ class Bus {
     this._state = 'undefined';
     this._maxCount = 2;
     this._tax = 20;
+    this._taxForPensioner = 15;
     this._passengers = [];
   }
   
@@ -23,7 +24,15 @@ class Bus {
   }
   
   receive(passengers) {
-    this._passengers.push(...passengers.filter(item => item.money >= this._tax));
+    const availablePassengers = passengers.filter(item => item.money >= this._tax);
+  
+    availablePassengers.forEach(passenger => {
+      let amount = passenger.type === 'pensioner' ? this._taxForPensioner : this._tax;
+      
+      passenger.pay(amount);
+    });
+    
+    this._passengers.push(...availablePassengers);
     
     if (this._passengers.length < this._maxCount) {
       this._setState('not_full');
