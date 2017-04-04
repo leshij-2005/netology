@@ -1,5 +1,6 @@
 const assert = require('chai').assert;
 const Bus = require('../src/bus');
+const Passenger = require('../src/passenger');
 
 suite('when bus left on the route', function(){
   let bus = {};
@@ -7,21 +8,17 @@ suite('when bus left on the route', function(){
   setup(function() {
     bus = new Bus();
   
-    bus.setState('ready');
+    bus.left();
   });
   
-  test('bus is ready to receive passengers', function(){
-    assert.equal(bus.state, 'ready');
+  test('bus is empty', function(){
+    assert.equal(bus.state, 'empty');
   });
   
-  test('bus receive one passenger', function() {
+  test('when bus receive one passenger then bus not empty', function() {
     bus.receive([new Passenger()]);
     
-    assert.equal(bus.passengers.length, 1);
+    assert.equal(bus.state, 'not_full');
   });
-  
-  class Passenger {
-    
-  }
 });
 

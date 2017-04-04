@@ -12,12 +12,18 @@ class Bus {
     return this._passengers;
   }
   
-  setState(state) {
+  _setState(state) {
     this._state = state;
+  }
+  
+  left() {
+    this._setState('empty');
   }
   
   receive(passengers) {
     this._passengers.push(...passengers);
+    
+    this._setState('not_full');
   }
 }
 
