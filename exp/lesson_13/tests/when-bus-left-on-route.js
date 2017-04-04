@@ -1,4 +1,5 @@
 const assert = require('chai').assert;
+const Bus = require('../src/bus');
 
 suite('when bus left on the route', function(){
   test('bus is ready to receive passengers', function(){
@@ -8,19 +9,5 @@ suite('when bus left on the route', function(){
     
     assert.equal(bus.state, 'ready');
   });
-  
-  class Bus {
-    constructor() {
-      this._state = 'undefined';
-    }
-    
-    get state() {
-      return this._state;
-    }
-    
-    setState(state) {
-      this._state = state;
-    }
-  }
 });
 
