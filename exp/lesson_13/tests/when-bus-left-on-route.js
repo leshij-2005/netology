@@ -16,15 +16,21 @@ suite('when bus left on the route', function(){
   });
   
   test('when bus receive one passenger then bus not empty', function() {
-    bus.receive([new Passenger()]);
+    bus.receive([new Passenger(20)]);
     
     assert.equal(bus.state, 'not_full');
   });
   
   test('when bus receive two passenger then bus is full', function() {
-    bus.receive([new Passenger(), new Passenger()]);
+    bus.receive([new Passenger(20), new Passenger(20)]);
     
     assert.equal(bus.state, 'full');
+  });
+  
+  test('when bus receive one passenger and passenger have`t money then bus not receive passenger', function() {
+    bus.receive([new Passenger()]);
+    
+    assert.equal(bus.passengers.length, 0);
   });
 });
 
