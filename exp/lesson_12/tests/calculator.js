@@ -9,4 +9,12 @@ suite('String calculator should', function () {
     
     assert.equal(sum, 0);
   });
+  
+  test('return 1 when value is 1', function () {
+    const calculator = new Calculator();
+    
+    const sum = calculator.add('1');
+    
+    assert.equal(sum, 1);
+  });
 });
