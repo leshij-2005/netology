@@ -21,5 +21,18 @@ suite('when bus left on the route', function(){
     
     assert.equal(bus.passengers.length, 0);
   });
+  
+  test('when bus receive passenger is pensioner then tax equal = 15', function(){
+    const passenger = new PassengerBuilder()
+      .withMoney(20)
+      .withTypePensioner()
+      .create();
+    
+    const bus = new BusBuilder()
+      .receive(passenger)
+      .go();
+    
+    assert.equal(passenger.money, 20 - 15);
+  });
 });
 
