@@ -1,6 +1,6 @@
 const assert = require('chai').assert;
 const BusBuilder = require('./dsl/bus-builder');
-const Passenger = require('../src/passenger');
+const PassengerBuilder = require('./dsl/passenger-builder');
 
 suite('when bus left on the route', function(){
   let bus = {};
@@ -21,34 +21,5 @@ suite('when bus left on the route', function(){
     
     assert.equal(bus.passengers.length, 0);
   });
-  
-  class PassengerBuilder {
-    constructor() {
-      this._money = 0;
-      this._type = 'default';
-    }
-    
-    withMoney(money) {
-      this._money = money;
-      
-      return this;
-    }
-    
-    withNoMoney() {
-      this._money = 0;
-      
-      return this;
-    }
-    
-    withTypePensioner() {
-      this._type = 'pensioner';
-      
-      return this;
-    }
-    
-    create() {
-      return new Passenger(this._money, this._type);
-    }
-  }
 });
 
